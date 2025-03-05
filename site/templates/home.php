@@ -1,0 +1,2 @@
+<?= snippet('head') ?>
+<?= snippet('foot') ?>
