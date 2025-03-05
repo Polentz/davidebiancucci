@@ -4,12 +4,13 @@ html {
 
 body {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    overflow-x: hidden;
 }
 
 .header {
     position: fixed;
-    top: 3rem;
+    top: 2rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -23,7 +24,7 @@ body {
     background-color: var(--button-color);
     padding: 0.5rem 1rem;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .button svg {
@@ -47,4 +48,48 @@ body {
 
 .dropdown-menu-button:hover {
     background-color: var(--button-hover-color);
+}
+
+/* diverso per products and projects: main scrollable */
+.main {
+    width: 100vw;
+    height: var(--doc-height);
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    width: 100vw;
+    height: var(--doc-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-content {
+    height: calc(var(--doc-height) / 1.75);
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.section-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
