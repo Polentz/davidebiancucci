@@ -1,3 +1,9 @@
 :root {
     --doc-height: 100%;
+    --button-width: 16rem;
+    --button-height: 3rem;
+    --button-color: #ececed;
+    --button-hover-color: #b7b4b4;
+    --txt-color: #000000;
+    --bg-color: #ffffff;
 }
