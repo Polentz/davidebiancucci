@@ -1,0 +1,128 @@
+title: 
+  en: Object
+  it: Oggetto
+
+create:
+  title:
+    label:
+      en: Object
+      it: Oggetto
+  # fields:
+  #   - price
+  #   - stock
+  redirect: true
+  status: unlisted
+
+options:
+  move: false
+
+image:
+  icon: false
+
+columns:
+  main:
+    width: 2/3
+    sections:
+      content:
+        label: false
+        type: fields
+        fields:
+          previewImage:
+            label:
+              en: Preview image
+              it: immagine di preview
+            type: files
+            template: image
+            uploads: image
+            multiple: false
+            # translate: false
+            image:
+              icon: true
+              ratio: 4/3
+              back: white
+              cover: true
+          previewImageInfo:
+            type: info
+            label: false
+            text:
+              en: >
+                The image appears on the page {{ page.parent.title }}.
+              it: >
+                L'immagini compare nella griglia della pagina {{ page.parent.title }}.
+          previewText:
+            label:
+              en: Preview text
+              it: Testo di preview
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
+          itemGallery:
+            label:
+              en: Gallery
+              it: Galleria immagini
+            type: files
+            template: image
+            uploads: image
+            multiple: true
+            # translate: false
+            image:
+              icon: true
+              ratio: 4/3
+              back: white
+              cover: true
+          itemTitle:
+            label:
+              en: Title
+              it: Titolo
+            type: text
+          itemText:
+            label:
+              en: Text
+              it: Testo
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
+  sidebar:
+    width: 1/3
+    sections:
+      features:
+        label: false
+        type: fields
+        fields:
+          # category:
+          #   label:
+          #     en: Category
+          #     it: Categoria
+          #   type: multiselect
+          #   options:
+          #     type: query
+          #     query: page.parent.categories.split
+          # extends: fields/product-standards
+          attachments:
+            label:
+              en: File attachments
+              it: File allegati          
+            type: files 
+            template: files
+            uploads: files
+            multiple: true
+            translate: false
+            image:
+              icon: true
+              ratio: 4/3
+              back: white
+              cover: true
+
+

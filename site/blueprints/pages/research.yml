@@ -1,0 +1,52 @@
+title: 
+  en: Reasearch
+  it: Reasearch
+  
+options:
+  delete: false
+  duplicate: false
+  changeStatus: false
+  move: false
+  sort: false
+
+image:
+  icon: store
+  query: false
+
+tabs:
+  content:
+    label:
+      en: Page content
+      it: Contenuti della pagina
+    icon: page
+    sections:
+      # categories:
+      #   type: fields
+      #   fields:
+      #     categories: 
+      #       label:
+      #         en: Categories
+      #         it: Categorie
+      #       type: tags
+      items:
+        label: 
+          en: Objects
+          it: Oggetti
+        type: pages
+        layout: cards
+        template:
+          - object
+        # info: '{{ page.category }}'
+        search: true
+        sortable: true
+        image:
+          cover: true
+          ratio: 3/4
+          back: white
+          query: page.previewImage.toFile()
+  # seo:
+  #   extends: seo/page
+  #   columns:
+  #         main:
+  #           fields:
+  #             metaInherit: false

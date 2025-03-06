@@ -1,12 +1,7 @@
-<?php 
-    $filterBy = get('filter');
-    
+<?php     
     $items = $page
         ->children()
         ->listed()
-        ->when($filterBy, function($filterBy) {
-            return $this->filterBy('category', $filterBy, ',');
-        });
 ?>
 
 <?= snippet('head') ?>
@@ -14,7 +9,10 @@
 
 <main class="main">
     <?php foreach ($items as $item) : ?>
-        <!-- list items -->
+        <?= snippet('section', ['page' => $item], slots: true) ?>
+            <?php slot('text') ?>
+            <?php endslot() ?>
+        <?php endsnippet() ?>
     <?php endforeach ?>
 </main>
 
