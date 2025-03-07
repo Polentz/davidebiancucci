@@ -18,7 +18,33 @@
                 <?php endforeach ?>
                 <?php if ($page->itemText()->isNotEmpty()) : ?>
                     <div class="carousel-element text">
-                        <?= $page->itemText()->kt() ?>
+                        <div class="text-description">
+                            <?= $page->itemText()->kt() ?>
+                        </div>
+                        <?php if ($page->itemMaterial()->isNotEmpty()) : ?>
+                            <div class="text-material">
+                                <p>Material:</p>
+                                <p><?= $page->itemMaterial() ?></p>
+                            </div>
+                        <?php endif ?>
+                        <?php if ($page->itemShipping()->isNotEmpty()) : ?>
+                            <div class="text-shipping">
+                                <p>Shipping:</p>
+                                <p><?= $page->itemShipping() ?></p>
+                            </div>
+                        <?php endif ?>
+                        <?php if ($page->itemDimensions()->isNotEmpty()) : ?>
+                            <div class="text-dimensions">
+                                <p>Dimensions:</p>
+                                <p><?= $page->itemDimensions() ?></p>
+                            </div>
+                        <?php endif ?>
+                        <?php if ($page->itemPrice()->isNotEmpty()) : ?>
+                            <div class="text-price">
+                                <p>Price:</p>
+                                <p><?= $page->itemPrice() ?> €</p>
+                            </div>
+                        <?php endif ?>
                     </div>
                 <?php endif ?>
             </div>

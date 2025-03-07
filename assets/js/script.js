@@ -3,6 +3,16 @@ const documentHeight = () => {
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
 };
 
+const toggleMenu = () => { 
+    const menuButton = document.querySelector(".menu-button");
+    const menuButtonSvg = document.querySelector(".menu-button svg");
+    const dropdwonMenu = document.querySelector(".dropdown-menu");
+    menuButton.addEventListener("click", () => {
+        menuButtonSvg.classList.toggle("--open");
+        dropdwonMenu.classList.toggle("--open");
+    });
+};
+
 const mouseMovement = () => {
     const body = document.querySelector("body")
     const section = document.querySelector(".section");
@@ -99,8 +109,7 @@ const slideshow = () => {
 
 window.addEventListener("load", () => {
     documentHeight();
-    mouseMovement();
-    slideshow();
+    toggleMenu();
 });
 
 window.addEventListener("resize", () => {

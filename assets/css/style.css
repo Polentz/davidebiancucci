@@ -5,7 +5,7 @@ html {
 body {
     position: relative;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     overflow-x: hidden;
     margin: 0 auto;
 }
@@ -27,22 +27,32 @@ body {
     background-color: var(--button-color);
     padding: 0.5rem 1rem;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .button svg {
     width: 12px;
     height: 8px;
     fill: var(--txt-color);
+    transform-origin: center center;
+    transition: transform .1s ease;
+}
+
+.button svg.--open {
+    transform: scaleY(-1);
 }
 
 .menu-button {
     box-shadow: -2px -2px 5px 1px #00000050 inset;
-    margin-bottom: 0.5px;
 }
 
-.dropdown-menu.--close {
+.dropdown-menu {
     display: none;
+    border-top: solid 0.5px #ffffff;
+}
+
+.dropdown-menu.--open {
+    display: block;
 }
 
 .dropdown-menu-button {
@@ -83,21 +93,10 @@ body {
     overflow: hidden;
 }
 
-/* .section-content .carousel {
-    display: flex;
-    justify-content: center;
-} */
-
-/* .section-content .carousel img {
-    height: 100%;
-    object-fit: contain;
-} */
-
 .section-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 0.5rem; */
 }
 
 .carousel {
@@ -109,13 +108,12 @@ body {
 
 .carousel-element {
     height: inherit;
-    /* pointer-events: none; */
     flex-direction: column;
 }
 
 .carousel-element.image img {
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     object-fit: contain;
 }
 
@@ -125,6 +123,10 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+}
+
+.text-description p:not(:first-child) {
+    margin-top: 1rem;
 }
 
 .carousel-element:not(:first-child) {
@@ -161,27 +163,39 @@ body {
     overflow: hidden;
 }
 
-.grid-item img {
+.grid-item-image {
+    z-index: 1;
+    transition: opacity .25s ease-in-out;
+}
+
+.grid-item-image img {
     width: 100%;
     position: relative;
-    z-index: 2;
     display: block;
     aspect-ratio: 3 / 4;
     object-fit: contain;
 }
 
-.grid-item figcaption {
+.grid-item-text {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
     opacity: 0;
     transition: opacity .5s ease-in-out;
 }
 
+.grid-item:hover .grid-item-image {
+    opacity: 0;
+}
+
+.grid-item:hover .grid-item-text {
+    opacity: 1;
+}

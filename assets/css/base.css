@@ -188,3 +188,13 @@ button {
     border: none;
     border-radius: 0;
 }
+
+*::selection {
+    color: inherit;
+    background: inherit;
+}
+
+*::-moz-selection {
+    color: inherit;
+    background: inherit;
+}

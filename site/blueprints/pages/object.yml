@@ -20,39 +20,41 @@ image:
   icon: false
 
 columns:
-  main:
-    width: 2/3
+  sidebar:
+    width: 1/3
     sections:
-      content:
+      preview:
         label: false
         type: fields
         fields:
-          previewImage:
+          previewHeadline:
             label:
-              en: Preview image
-              it: immagine di preview
+              en: 'Page: "{{ page.parent.title }}"'
+              it: 'Pagina: "{{ page.parent.title }}"'
+            type: headline
+            numbered: false
+          previewImage:
+            width: 1/2
+            label:
+              en: Image
+              it: immagine
             type: files
+            layout: cards
+            size: full
+            text: false
             template: image
             uploads: image
             multiple: false
             # translate: false
             image:
               icon: true
-              ratio: 4/3
               back: white
               cover: true
-          previewImageInfo:
-            type: info
-            label: false
-            text:
-              en: >
-                The image appears on the page {{ page.parent.title }}.
-              it: >
-                L'immagini compare nella griglia della pagina {{ page.parent.title }}.
           previewText:
+            width: 1/2
             label:
-              en: Preview text
-              it: Testo di preview
+              en: Text
+              it: Testo
             type: writer
             marks:
               - bold
@@ -62,25 +64,73 @@ columns:
               - link
               - clear
             nodes: false
+          previewInfo:
+            type: info
+            label: false
+            text:
+              en: >
+                These image and text appear on the page {{ page.parent.title }}.
+              it: >
+                L'immagine e il testo compaiono nella griglia della pagina {{ page.parent.title }}.
+      features:
+        label: false
+        type: fields
+        fields:
+          category:
+            label:
+              en: Categories
+              it: Categorie
+            type: multiselect
+            options:
+              type: query
+              query: page.parent.categories.split
+          # attachments:
+          #   label:
+          #     en: File attachments
+          #     it: File allegati          
+          #   type: files 
+          #   template: files
+          #   uploads: files
+          #   multiple: true
+          #   translate: false
+          #   image:
+          #     icon: true
+          #     ratio: 4/3
+          #     back: white
+          #     cover: true
+  main:
+    width: 2/3
+    sections:
+      content:
+        label: false
+        type: fields
+        fields:
+          itemHeadline:
+            label:
+              en: 'Page: "{{ page.title }}"'
+              it: 'Pagina: "{{ page.title }}"'
+            type: headline
+            numbered: false
+          itemTitle:
+            label:
+              en: Title
+              it: Titolo
+            type: text
           itemGallery:
             label:
-              en: Gallery
-              it: Galleria immagini
+              en: Images
+              it: Immagini
             type: files
+            layout: cards
+            text: false
             template: image
             uploads: image
             multiple: true
             # translate: false
             image:
               icon: true
-              ratio: 4/3
               back: white
               cover: true
-          itemTitle:
-            label:
-              en: Title
-              it: Titolo
-            type: text
           itemText:
             label:
               en: Text
@@ -94,35 +144,77 @@ columns:
               - link
               - clear
             nodes: false
-  sidebar:
-    width: 1/3
-    sections:
-      features:
-        label: false
-        type: fields
-        fields:
-          # category:
-          #   label:
-          #     en: Category
-          #     it: Categoria
-          #   type: multiselect
-          #   options:
-          #     type: query
-          #     query: page.parent.categories.split
-          # extends: fields/product-standards
-          attachments:
+          itemPrice:
+            width: 1/2
             label:
-              en: File attachments
-              it: File allegati          
-            type: files 
-            template: files
-            uploads: files
-            multiple: true
-            translate: false
-            image:
-              icon: true
-              ratio: 4/3
-              back: white
-              cover: true
-
-
+              en: Price
+              it: Prezzo
+            type: number
+            step: 1
+            min: 0
+            max: 1000000
+            after: €
+          itemMaterial:
+            width: 1/2
+            label:
+              en: Material
+              it: Materiale
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false 
+          itemShipping:
+            width: 1/2
+            label:
+              en: Shipping
+              it: Spedizioni
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false      
+          itemDimensions:
+            width: 1/2
+            label:
+              en: Dimensions
+              it: Dimensioni
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
+          itemBuy:
+            width: 1/2
+            label:
+              en: Toggle buy button
+              it: Attiva il pulsante buy
+            type: toggle
+          itemRent:
+            width: 1/2
+            label:
+              en: Toggle rent button
+              it: Attiva il pulsante rent
+            type: toggle
+          itemStock:
+            width: 1/2
+            label:
+              en: Stock
+              it: Scorte
+            type: number
+            default: 1
+            step: 1
+            min: 0
+            max: 10

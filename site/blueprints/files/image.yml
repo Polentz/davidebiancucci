@@ -6,19 +6,6 @@ accept:
   type: image
 
 fields:
-  caption:
-    label:
-      en: Caption
-      it: Didascalia
-    type: writer
-    marks:
-      - bold
-      - italic
-      - underline
-      - strike
-      - link
-      - clear
-    nodes: false
   alt:
     label: 
       en: Alternative text
