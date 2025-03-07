@@ -1,0 +1,117 @@
+title: 
+  en: Slide with a text
+  it: Slide con il testo
+
+options:
+  preview: false
+  changeTemplate:
+    - section-image
+  navigation:
+    template: all
+
+create:
+  title:
+    label:
+      en: Id
+      it: Id
+  redirect: true
+  status: listed
+
+icon: text-center
+    
+sections:
+  content:
+    type: fields
+    fields:
+      itemTitle:
+        label:
+          en: Title
+          it: Titolo
+        type: text
+      itemText:
+        label:
+          en: Text
+          it: Testo
+        type: writer
+        marks:
+          - bold
+          - italic
+          - underline
+          - strike
+          - link
+          - clear
+        nodes: false
+      itemPrice:
+        width: 1/2
+        label:
+          en: Price
+          it: Prezzo
+        type: number
+        step: 1
+        min: 0
+        max: 1000000
+        after: €
+      itemMaterial:
+        width: 1/2
+        label:
+          en: Material
+          it: Materiale
+        type: writer
+        marks:
+          - bold
+          - italic
+          - underline
+          - strike
+          - link
+          - clear
+        nodes: false 
+      itemShipping:
+        width: 1/2
+        label:
+          en: Shipping
+          it: Spedizioni
+        type: writer
+        marks:
+          - bold
+          - italic
+          - underline
+          - strike
+          - link
+          - clear
+        nodes: false      
+      itemDimensions:
+        width: 1/2
+        label:
+          en: Dimensions
+          it: Dimensioni
+        type: writer
+        marks:
+          - bold
+          - italic
+          - underline
+          - strike
+          - link
+          - clear
+        nodes: false
+      activateBuy:
+        width: 1/2
+        label:
+          en: Toggle buy button
+          it: Attiva il pulsante buy
+        type: toggle
+      activateRent:
+        width: 1/2
+        label:
+          en: Toggle rent button
+          it: Attiva il pulsante rent
+        type: toggle
+      itemStock:
+        width: 1/2
+        label:
+          en: Stock
+          it: Scorte
+        type: number
+        default: 1
+        step: 1
+        min: 0
+        max: 10

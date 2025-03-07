@@ -1,0 +1,13 @@
+Title: 1
+
+----
+
+Itemtitle: Tobia Scarpa, Posate, Cassina, 1945
+
+----
+
+Itemimage: - file://COjJxnnbjqOhkh3u
+
+----
+
+Uuid: z6v0ST9KOAm2yizM

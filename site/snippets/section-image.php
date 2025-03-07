@@ -1,0 +1,23 @@
+<?php 
+    $sectionImages = $page->siblings()->filterBy('template', 'section-image'); 
+?>
+
+<div id="<?= $section->uuid() ?>" class="section-wrapper slide <?= $section->intendedTemplate() ?>">
+    <div class="section-header">
+        <h2><?= $section->itemTitle() ?></h2>
+    </div>
+    <div class="section-content">
+        <?php if ($image = $section->itemImage()->toFile()) : ?>
+            <figure class="image-content">
+                <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>" />
+            </figure>
+        <?php endif ?>
+    </div>
+    <div class="section-footer">
+        <div class="slides-counter">
+            <span class="slide-num"><?= $section->num() ?> / </span>
+        </div>
+        <span class="slides-nav">Information</span>
+    </div>
+</div>
+

@@ -1,0 +1,46 @@
+title: 
+  en: Slide with an image
+  it: Slide con l'immagine
+
+options:
+  preview: false
+  changeTemplate:
+    - section-text
+  navigation:
+    template: all
+
+create:
+  title:
+    label:
+      en: Id
+      it: Id
+  redirect: true
+  status: listed
+
+image:
+  icon: false
+    
+sections:
+  content:
+    type: fields
+    fields:
+      itemTitle:
+        label:
+          en: Title
+          it: Titolo
+        type: text
+      itemImage:
+        label:
+          en: Image
+          it: Immagine
+        type: files
+        layout: cards
+        text: false
+        uploads:
+          parent: page.parent
+          template: image
+        multiple: false
+        image:
+          icon: true
+          back: white
+          cover: true

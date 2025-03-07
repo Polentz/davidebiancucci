@@ -13,8 +13,8 @@
 <?= snippet('header') ?>
 
 <main class="main">
-    <section>
-        <ul class="grid">
+    <section class="section-grid-layout">
+        <ul class="grid-layout">
             <?php foreach ($items as $item) : ?>
                 <li class="grid-item">
                     <a href="<?= $item->url() ?>">

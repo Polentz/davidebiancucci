@@ -99,6 +99,26 @@ body {
     align-items: center;
 }
 
+.slide:not(:first-child) {
+    display: none;
+}
+
+/* .slides-counter {
+    display: block;
+}
+
+.slides-counter.--hide {
+    display: none;
+} */
+
+.slides-counter .index {
+    display: none;
+}
+
+.slides-counter .index.--active {
+    display: inline;
+}
+
 .carousel {
     position: relative;
     height: inherit;
@@ -118,6 +138,14 @@ body {
 }
 
 .carousel-element.text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.text-content {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -149,7 +177,7 @@ body {
     display: inline;
 }
 
-.grid {
+.grid-layout {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     /* grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); */

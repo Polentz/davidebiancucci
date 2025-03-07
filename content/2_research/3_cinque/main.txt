@@ -1,12 +1,16 @@
-Title: Sei
+Title: Cinque
 
 ----
 
-Previewimage: - file://CNrMASXPCxSQzmM1
+Previewimage: - file://hEQxFWELEEkjulqH
 
 ----
 
 Previewtext: <p>Tobia Scarpa</p><p>Posate</p><p>Cassina 1945</p>
+
+----
+
+Category: 
 
 ----
 
@@ -48,4 +52,4 @@ Text: <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Ac bibendum pulvin
 
 ----
 
-Uuid: G9VngVXjb3H0QVns
+Uuid: 5mRVb6mTVTDsGRG4

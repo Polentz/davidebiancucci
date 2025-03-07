@@ -34,8 +34,10 @@ tabs:
           it: Oggetti
         type: pages
         layout: cards
+        size: large
         template:
           - object
+          - main
         # info: '{{ page.category }}'
         search: true
         sortable: true

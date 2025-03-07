@@ -1,0 +1,15 @@
+<?= snippet('head') ?>
+<?php snippet('header', slots: true) ?>
+    <?php slot('subpage') ?>
+    <?php endslot() ?>
+<?php endsnippet() ?>
+
+<main class="main">
+    <section class="section">
+        <?php foreach ($page->children()->listed() as $section) : ?>
+            <?php snippet($section->intendedTemplate(), compact('section')) ?>
+        <?php endforeach ?>
+    </section>
+</main>
+
+<?= snippet('foot') ?>
