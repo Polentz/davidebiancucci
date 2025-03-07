@@ -14,10 +14,14 @@
         <?php endif ?>
     </div>
     <div class="section-footer">
-        <div class="slides-counter">
-            <span class="slide-num"><?= $section->num() ?> / </span>
+        <div class="nav-buttons">
+            <!-- scrivere if statement: se array lenght > 1, display this -->
+            <div class="slides-counter">
+                <span class="slide-num"><?= $section->num() ?> / </span>
+            </div>
+            <!-- questo qui vale solo quando ho immagini + testo -->
+            <a class="slides-nav">Information</a>
         </div>
-        <span class="slides-nav">Information</span>
     </div>
 </div>
 

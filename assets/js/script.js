@@ -14,8 +14,7 @@ const toggleMenu = () => {
 };
 
 const mouseMovement = () => {
-    const body = document.querySelector("body")
-    const section = document.querySelector(".section");
+    const main = document.querySelector(".main");
     document.addEventListener("mousemove", (event) => {
         let x = event.pageX;
         let w = document.body.clientWidth;
@@ -23,17 +22,16 @@ const mouseMovement = () => {
         const xX = xP.toFixed(0);
     
         if (xX >= 0 && xX <= 50) {
-            body.style.cursor = "w-resize";
-            section.classList.remove("right");
-            section.classList.add("left");
+            main.classList.remove("right");
+            main.classList.add("left");
         } else {
-            body.style.cursor = "e-resize";
-            section.classList.remove("left");
-            section.classList.add("right");
+            main.classList.remove("left");
+            main.classList.add("right");
         };
     });
-}
+};
 
+// goes with object.php
 const slideshow = () => {
     const section = document.querySelector(".section");
     const carouselElements = document.querySelectorAll(".carousel-element");
@@ -106,57 +104,71 @@ const slideshow = () => {
     });
 };
 
-
+// goes with main.php
 const handleSlides = () => {
-    const section = document.querySelector(".section");
-    const slides = document.querySelectorAll(".slide");
-    const slidesWithImage = document.querySelectorAll(".section-image");
-    const slidesWithText = document.querySelectorAll(".section-text");
-    const slidesCounter = document.querySelectorAll(".slides-counter");
-    const slideNav = document.querySelector(".slides-nav");
+    const main = document.querySelector(".main");
+    const sections = document.querySelectorAll(".section-slider");
+    sections.forEach(section => {
+        const slides = section.querySelectorAll(".slide");
+        const slideContents = section.querySelectorAll(".section-content");
+        const slidesCounter = section.querySelectorAll(".slides-counter");
 
-    slidesCounter.forEach(counter => {
-        const slidesLenght = document.createElement("span");
-        slidesLenght.classList.add("slides-lenght");
-        slidesLenght.innerHTML = slidesWithImage.length;
-        if (slidesWithImage.length > 1) {
-            if (slidesWithImage.length > 1) {
-                counter.appendChild(slidesLenght);
+        document.addEventListener("mousemove", () => {
+            if (main.classList.contains("left")) {
+                slideContents.forEach(content => {
+                    content.style.cursor = "w-resize";
+                });
+            } else if (main.classList.contains("right")) {
+                slideContents.forEach(content => {
+                    content.style.cursor = "e-resize";
+                });
             };
+        });
+
+        slidesCounter.forEach(counter => {
+            const slidesLenght = document.createElement("span");
+            slidesLenght.classList.add("slides-lenght");
+            slidesLenght.innerHTML = slides.length;
+            if (slides.length > 1) {
+                if (slides.length > 1) {
+                    counter.appendChild(slidesLenght);
+                };
+            };
+        });
+    
+        let slideIndex = 1;
+    
+        const plusSlides = (n) => {
+            showSlides(slideIndex += n);
         };
+    
+        const showSlides = (n) => {
+            let i;
+            if (n > slides.length) {
+                slideIndex = 1;
+            };
+            if (n < 1) {
+                slideIndex = slides.length;
+            };
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].classList.remove("--show");
+            };
+            slides[slideIndex - 1].style.display = "flex";
+            slides[slideIndex - 1].classList.add("--show");
+        };
+    
+        slideContents.forEach(content => {
+            content.addEventListener("click", () => {
+                if (main.classList.contains("left")) {
+                    plusSlides(-1);
+                } else if (main.classList.contains("right")) {
+                    plusSlides(1);
+                };
+            });
+        });
     });
-
-    let slideIndex = 1;
-
-    const plusSlides = (n) => {
-        showSlides(slideIndex += n);
-    };
-
-    const showSlides = (n) => {
-        let i;
-        if (n > slides.length) {
-            slideIndex = 1;
-        };
-        if (n < 1) {
-            slideIndex = slides.length;
-        };
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            slides[i].classList.remove("--show");
-        };
-        slides[slideIndex - 1].style.display = "flex";
-        slides[slideIndex - 1].classList.add("--show");
-    };
-
-    section.addEventListener("click", () => {
-        if (section.classList.contains("left")) {
-            plusSlides(-1);
-        } else if (section.classList.contains("right")) {
-            plusSlides(1);
-        };
-    });
-};
-
+}; 
 
 window.addEventListener("load", () => {
     documentHeight();

@@ -1,0 +1,68 @@
+title: 
+  en: Design
+  it: Design
+  
+options:
+  move: false
+
+image:
+  icon: circle
+  query: false
+
+# tabs:
+#   content:
+#     label:
+#       en: Page content
+#       it: Contenuti della pagina
+#     icon: page
+#     sections:
+#       # categories:
+#       #   type: fields
+#       #   fields:
+#       #     categories: 
+#       #       label:
+#       #         en: Categories
+#       #         it: Categorie
+#       #       type: tags
+#       items:
+#         label: 
+#           en: Projects
+#           it: Progetti
+#         type: pages
+#         layout: cards
+#         size: large
+#         template:
+#           - section-image
+#           - section-text
+#         search: true
+#         sortable: true
+#         image:
+#           cover: true
+#           ratio: 3/4
+#           back: white
+#           query: page.previewImage.toFile()
+
+sections:
+  slides:
+    label: 
+      en: Slides
+      it: Slide
+    type: pages
+    layout: cards
+    size: large
+    template:
+      - section-image
+      - section-text
+    info: '{{ page.intendedTemplate.title }}'
+    search: true
+    sortable: true
+    empty: 
+      en: >
+        Add a new slide to the page
+      it: >
+        Aggiungi una nuova slide alla pagina
+    image:
+      cover: true
+      ratio: 3/4
+      back: white
+      query: page.itemImage.toFile()

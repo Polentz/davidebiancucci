@@ -1,12 +1,12 @@
 title: 
-  en: Reasearch
-  it: Reasearch
+  en: Design
+  it: Design
   
 options:
   move: false
 
 image:
-  icon: store
+  icon: circle
   query: false
 
 tabs:
@@ -26,15 +26,13 @@ tabs:
       #       type: tags
       items:
         label: 
-          en: Objects
-          it: Oggetti
+          en: Projects
+          it: Progetti
         type: pages
         layout: cards
         size: large
         template:
-          - object
           - main
-        # info: '{{ page.category }}'
         search: true
         sortable: true
         image:
@@ -42,9 +40,3 @@ tabs:
           ratio: 3/4
           back: white
           query: page.previewImage.toFile()
-  # seo:
-  #   extends: seo/page
-  #   columns:
-  #         main:
-  #           fields:
-  #             metaInherit: false
