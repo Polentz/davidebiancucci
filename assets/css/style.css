@@ -10,6 +10,20 @@ body {
     margin: 0 auto;
 }
 
+a:not(.button a),
+.link {
+    color: var(--txt-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+a:visited,
+a:active,
+a:focus {
+    color: inherit;
+}
+
 .header {
     position: fixed;
     top: 2rem;
@@ -105,14 +119,15 @@ body {
     z-index: 9;
 }
 
+.section-footer-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
 /* slides as pages option */
 
 .slide:not(:first-child) {
     display: none;
-}
-
-.slides-nav {
-    cursor: pointer;
 }
 
 .image-content {

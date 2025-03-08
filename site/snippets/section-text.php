@@ -1,3 +1,9 @@
+<?php 
+    $siblings = $section->siblings()->listed();
+    $siblingsImage = $section->siblings()->listed()->template('section-image');
+    $firstSibling = $siblingsImage->first();
+?>
+
 <div id="<?= $section->uuid() ?>" class="section-wrapper slide <?= $section->intendedTemplate() ?>">
     <div class="section-header">
         <h2><?= $section->itemTitle() ?></h2>
@@ -35,26 +41,27 @@
     </div>
     <div class="section-footer">
         <?php if ($section->activateBuy()->isTrue() || $section->activateRent()->isTrue()) : ?>
-            <div class="action-buttons">
-                <div class="text-buttons">
-                    <?php if ($section->activateBuy()->isTrue()) : ?>
-                        <div class="button-buy">
-                            <a href="<?= $site->url() ?>">Buy</a>
-                        </div>
-                    <?php endif ?>
-                    <?php if ($section->activateRent()->isTrue()) : ?>
-                        <div class="button-buy">
-                            <a href="<?= $site->url() ?>">Rent</a>
-                        </div>
-                    <?php endif ?>
-                </div>
+            <div class="section-footer-buttons">
+                <?php if ($section->activateBuy()->isTrue()) : ?>
+                    <a class="link" href="">Buy</a>
+                <?php endif ?>
+                <?php if ($section->activateRent()->isTrue()) : ?>
+                    <a class="link" href="">Rent</a>
+                <?php endif ?>
             </div>
         <?php endif ?>
-        <div class="nav-buttons">
-            <div class="slides-counter">
-                <span class="slide-num"><?= $section->num() ?> / </span>
-            </div>
-            <a href="<?= $site->url() ?>" class="slides-nav">Photos</a>
+        <div class="section-footer-buttons">
+            <?php if ($slots->subpage()) : ?>
+                <?php if ($siblingsImage->count() >= 1) : ?>
+                    <p class="slides-nav link" data-uuid="<?= $firstSibling->uuid() ?>">Photos</p>
+                <?php endif ?>
+            <?php else : ?>
+                <?php if ($siblings->count() > 1) : ?>
+                    <p class="slides-counter">
+                        <span class="slide-num"><?= $section->num() ?></span> / <span class="slides-lenght"><?= $siblings->count() ?></span>
+                    </p>
+                <?php endif ?>
+            <?php endif ?>
         </div>
     </div>
 </div>

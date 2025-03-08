@@ -30,7 +30,10 @@
     <?php foreach ($items as $item) : ?>
         <section id="<?= $item->uid() ?>" class="section section-slider">
             <?php foreach ($item->children()->listed() as $section) : ?>
-                <?php snippet($section->intendedTemplate(), compact('section')) ?>
+                <?php snippet($section->intendedTemplate(), compact('section'), slots: true) ?>
+                    <?php slot('subpage') ?>
+                    <?php endslot() ?>
+                <?php endsnippet() ?>
             <?php endforeach ?>
         </section>
     <?php endforeach ?>

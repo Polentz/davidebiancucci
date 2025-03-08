@@ -111,7 +111,6 @@ const handleSlides = () => {
     sections.forEach(section => {
         const slides = section.querySelectorAll(".slide");
         const slideContents = section.querySelectorAll(".section-content");
-        const slidesCounter = section.querySelectorAll(".slides-counter");
 
         document.addEventListener("mousemove", () => {
             if (main.classList.contains("left")) {
@@ -122,17 +121,6 @@ const handleSlides = () => {
                 slideContents.forEach(content => {
                     content.style.cursor = "e-resize";
                 });
-            };
-        });
-
-        slidesCounter.forEach(counter => {
-            const slidesLenght = document.createElement("span");
-            slidesLenght.classList.add("slides-lenght");
-            slidesLenght.innerHTML = slides.length;
-            if (slides.length > 1) {
-                if (slides.length > 1) {
-                    counter.appendChild(slidesLenght);
-                };
             };
         });
     
@@ -167,12 +155,33 @@ const handleSlides = () => {
                 };
             });
         });
+
+        slides.forEach(slide => {
+            const slideId = slide.id;
+            const slideNavs = document.querySelectorAll(".slides-nav");
+            slideNavs.forEach(slideNav => {
+                if (slideNav) {
+                    const slideNavData = slideNav.getAttribute("data-uuid");
+                    slideNav.addEventListener("click", () => {
+                        if (slideId === slideNavData) {
+                            slide.style.display = "flex";
+                            slide.classList.add("--show");
+                        } else {
+                            slide.style.display = "none";
+                            slide.classList.remove("--show");
+                        };
+                    });
+                };
+            });
+        });
     });
 }; 
 
 window.addEventListener("load", () => {
     documentHeight();
     toggleMenu();
+    mouseMovement();
+    handleSlides();
 });
 
 window.addEventListener("resize", () => {

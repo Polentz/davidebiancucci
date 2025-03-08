@@ -1,5 +1,8 @@
 <?php 
-    $sectionImages = $page->siblings()->filterBy('template', 'section-image'); 
+    $siblings = $section->siblings()->listed();
+    $siblingsImage = $section->siblings()->listed()->template('section-image');
+    $siblingsText = $section->siblings()->listed()->template('section-text');
+    $firstSibling = $siblingsText->first();
 ?>
 
 <div id="<?= $section->uuid() ?>" class="section-wrapper slide <?= $section->intendedTemplate() ?>">
@@ -14,14 +17,23 @@
         <?php endif ?>
     </div>
     <div class="section-footer">
-        <div class="nav-buttons">
-            <!-- scrivere if statement: se array lenght > 1, display this -->
-            <div class="slides-counter">
-                <span class="slide-num"><?= $section->num() ?> / </span>
-            </div>
-            <!-- questo qui vale solo quando ho immagini + testo -->
-            <a class="slides-nav">Information</a>
+        <div class="section-footer-buttons">
+            <?php if ($slots->subpage()) : ?>
+                <?php if ($siblingsImage->count() > 1) : ?>
+                    <p class="slides-counter">
+                        <span class="slide-num"><?= $section->num() ?></span> / <span class="slides-lenght"><?= $siblingsImage->count() ?></span>
+                    </p>
+                <?php endif ?>
+                <?php if ($siblingsText->count() == 1) : ?>
+                    <p class="slides-nav link" data-uuid="<?= $firstSibling->uuid() ?>">Information</p>
+                <?php endif ?>
+            <?php else : ?>
+                <?php if ($siblings->count() > 1) : ?>
+                    <p class="slides-counter">
+                        <span class="slide-num"><?= $section->num() ?></span> / <span class="slides-lenght"><?= $siblings->count() ?></span>
+                    </p>
+                <?php endif ?>
+            <?php endif ?>
         </div>
     </div>
 </div>
-
