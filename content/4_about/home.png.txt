@@ -1,0 +1,5 @@
+Uuid: gVauLEaGKFTD4vlT
+
+----
+
+Template: image

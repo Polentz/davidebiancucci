@@ -19,12 +19,12 @@
     <div class="section-footer">
         <div class="section-footer-buttons">
             <?php if ($slots->subpage()) : ?>
-                <?php if ($siblingsImage->count() > 1) : ?>
+                <?php if ($siblings->count() > 1) : ?>
                     <p class="slides-counter">
-                        <span class="slide-num"><?= $section->num() ?></span> / <span class="slides-lenght"><?= $siblingsImage->count() ?></span>
+                        <span class="slide-num"><?= $section->num() ?></span> / <span class="slides-lenght"><?= $siblings->count() ?></span>
                     </p>
                 <?php endif ?>
-                <?php if ($siblingsText->count() == 1) : ?>
+                <?php if ($siblingsText->count() >= 1) : ?>
                     <p class="slides-nav link" data-uuid="<?= $firstSibling->uuid() ?>">Information</p>
                 <?php endif ?>
             <?php else : ?>

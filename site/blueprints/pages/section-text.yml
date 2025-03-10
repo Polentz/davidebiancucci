@@ -4,10 +4,10 @@ title:
 
 options:
   preview: false
-  changeTemplate:
-    - section-image
-  navigation:
-    template: all
+  changeTemplate: false
+navigation:
+  status: all
+  template: all
 
 create:
   title:

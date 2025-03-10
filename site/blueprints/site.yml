@@ -3,3 +3,11 @@ title: Site
 sections:
   pages:
     type: pages
+    template:
+      - home
+      - research
+      - design
+      - default
+    info: '{{ page.intendedTemplate.title }}'
+    search: true
+    sortable: true

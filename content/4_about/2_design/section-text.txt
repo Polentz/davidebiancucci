@@ -1,0 +1,45 @@
+Title: Design
+
+----
+
+Itemtitle: Design
+
+----
+
+Itemtext: <p>He works in various fields, such as self-initiated projects, industrial design projects, design editions and exhibition design. He also does consulting and visual outcomes for design magazines and fashion brand applying the same vision and rigor no matter of the scale or type of project. From 2022 he is visiting professor at Politecnico di Milano.</p>
+
+----
+
+Quetionfield: false
+
+----
+
+Itemprice: 
+
+----
+
+Itemmaterial: 
+
+----
+
+Itemshipping: 
+
+----
+
+Itemdimensions: 
+
+----
+
+Activatebuy: false
+
+----
+
+Activaterent: false
+
+----
+
+Itemstock: 1
+
+----
+
+Uuid: RMkjm1M3nkj5HJtC

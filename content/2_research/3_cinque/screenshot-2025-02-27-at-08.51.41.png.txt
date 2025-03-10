@@ -1,5 +1,0 @@
-Uuid: AZVdvkAdMIH5gd5b
-
-----
-
-Template: image

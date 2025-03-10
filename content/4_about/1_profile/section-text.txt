@@ -1,0 +1,45 @@
+Title: Profile
+
+----
+
+Itemtitle: Profile
+
+----
+
+Itemtext: <p>Davide Biancucci is a designer working in between from the past the present and the future. </p><p>We live in a historical period where everything has already been designed multiple times, and to avoid redundancy, we cannot ignore the relevant examples of those who came before us. </p><p>Staring from that he is interested in shaping the future, conscious that the past and the present are the tools that enable us to do so. </p><p>In the era of multidisciplinarity he believe in monodisciplinarity. Monodisciplinarity but multidirectionality.</p>
+
+----
+
+Quetionfield: false
+
+----
+
+Itemprice: 
+
+----
+
+Itemmaterial: 
+
+----
+
+Itemshipping: 
+
+----
+
+Itemdimensions: 
+
+----
+
+Activatebuy: false
+
+----
+
+Activaterent: false
+
+----
+
+Itemstock: 1
+
+----
+
+Uuid: tCFbHLwhLqMrebQn

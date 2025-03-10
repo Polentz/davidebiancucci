@@ -1,0 +1,45 @@
+Title: Research
+
+----
+
+Itemtitle: Research
+
+----
+
+Itemtext: <p>He curates an ongoing collection of unique and selected objects, ranging from design classics to one-off pieces and he provides consultancy service to clients seeking rare and distinct objects to purchase/rent for interior design projects and shooting.</p>
+
+----
+
+Quetionfield: false
+
+----
+
+Itemprice: 
+
+----
+
+Itemmaterial: 
+
+----
+
+Itemshipping: 
+
+----
+
+Itemdimensions: 
+
+----
+
+Activatebuy: false
+
+----
+
+Activaterent: false
+
+----
+
+Itemstock: 1
+
+----
+
+Uuid: pKcjJjSW9A0UaRNQ

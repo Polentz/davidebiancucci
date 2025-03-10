@@ -7,9 +7,16 @@ const toggleMenu = () => {
     const menuButton = document.querySelector(".menu-button");
     const menuButtonSvg = document.querySelector(".menu-button svg");
     const dropdwonMenu = document.querySelector(".dropdown-menu");
+    const main = document.querySelector(".main");
     menuButton.addEventListener("click", () => {
         menuButtonSvg.classList.toggle("--open");
         dropdwonMenu.classList.toggle("--open");
+    });
+    main.addEventListener("click", () => {
+        if (dropdwonMenu.classList.contains("--open")) {
+            menuButtonSvg.classList.remove("--open");
+            dropdwonMenu.classList.remove("--open");
+        };
     });
 };
 

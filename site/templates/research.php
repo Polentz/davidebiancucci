@@ -17,18 +17,16 @@
         <ul class="grid-layout">
             <?php foreach ($items as $item) : ?>
                 <li class="grid-item" data-id="<?= $item->uid() ?>">
-
-                        <?php if ($preview = $item->previewImage()->toFile()) : ?>
-                            <figure class="grid-item-image">
-                                <img src="<?= $preview->resize(1200, null)->url() ?>" alt="<?= $preview->alt() ?>" />
-                            </figure>
-                        <?php endif ?>
-                        <?php if ($item->previewText()->isNotEmpty()) : ?>
-                            <div class="grid-item-text">
-                                <?= $item->previewText()->kirbytextinline() ?>
-                            </div>
-                        <?php endif ?>
-
+                    <?php if ($preview = $item->previewImage()->toFile()) : ?>
+                        <figure class="grid-item-image">
+                            <img src="<?= $preview->resize(1200, null)->url() ?>" alt="<?= $preview->alt() ?>" />
+                        </figure>
+                    <?php endif ?>
+                    <?php if ($item->previewText()->isNotEmpty()) : ?>
+                        <div class="grid-item-text">
+                            <?= $item->previewText()->kirbytextinline() ?>
+                        </div>
+                    <?php endif ?>
                 </li>
             <?php endforeach ?>
         </ul>
