@@ -41,6 +41,13 @@ sections:
           - link
           - clear
         nodes: false
+      quetionField:
+        label: false
+        type: toggle
+        text:
+          en: Want to include object information?
+          it: Vuoi includere le informazioni dell'oggetto?
+        default: false
       itemPrice:
         width: 1/2
         label:
@@ -51,6 +58,8 @@ sections:
         min: 0
         max: 1000000
         after: €
+        when:
+          quetionField: true
       itemMaterial:
         width: 1/2
         label:
@@ -65,6 +74,8 @@ sections:
           - link
           - clear
         nodes: false 
+        when:
+          quetionField: true
       itemShipping:
         width: 1/2
         label:
@@ -78,7 +89,9 @@ sections:
           - strike
           - link
           - clear
-        nodes: false      
+        nodes: false   
+        when:
+          quetionField: true   
       itemDimensions:
         width: 1/2
         label:
@@ -93,18 +106,24 @@ sections:
           - link
           - clear
         nodes: false
+        when:
+          quetionField: true
       activateBuy:
         width: 1/2
         label:
           en: Toggle buy button
           it: Attiva il pulsante buy
         type: toggle
+        when:
+          quetionField: true
       activateRent:
         width: 1/2
         label:
           en: Toggle rent button
           it: Attiva il pulsante rent
         type: toggle
+        when:
+          quetionField: true
       itemStock:
         width: 1/2
         label:
@@ -115,3 +134,5 @@ sections:
         step: 1
         min: 0
         max: 10
+        when:
+          quetionField: true

@@ -158,7 +158,7 @@ const handleSlides = () => {
 
         slides.forEach(slide => {
             const slideId = slide.id;
-            const slideNavs = document.querySelectorAll(".slides-nav");
+            const slideNavs = section.querySelectorAll(".slides-nav");
             slideNavs.forEach(slideNav => {
                 if (slideNav) {
                     const slideNavData = slideNav.getAttribute("data-uuid");
@@ -176,6 +176,28 @@ const handleSlides = () => {
         });
     });
 }; 
+
+handleItems = () => {
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(gridItem => {
+        gridItem.addEventListener("click", () => {
+            const itemId = gridItem.getAttribute("data-id");
+            const relatedItems = document.querySelectorAll(".section-slider");
+            relatedItems.forEach(relatedItem => {
+                const relatedId = relatedItem.id;
+                if (itemId === relatedId) {
+                    [...relatedItems].filter(i => i !== relatedItem).forEach(i => {
+                        i.classList.add("--show");
+                    });
+                    relatedItem.classList.add("--active");
+                    gridItem.classList.add("--inactive");
+                } else {
+                    relatedItem.classList.remove("--active");
+                };
+            });
+        });
+    });
+};
 
 window.addEventListener("load", () => {
     documentHeight();

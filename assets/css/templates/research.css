@@ -1,0 +1,19 @@
+.section-slider {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+    display: none;
+}
+
+.section-slider.--show {
+    display: flex;
+}
+
+.section-slider.--active {
+    display: flex;
+    order: -1;
+}
+
+.section-grid-layout.--inactive {
+    display: none;
+}
